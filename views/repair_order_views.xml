@@ -26,7 +26,7 @@
             <!-- Add Header Buttons and Hide Standard Create Sale Order -->
             <xpath expr="//header" position="inside">
                 <button name="action_create_quotation" string="Crear Cotización" type="object"
-                    class="oe_highlight" invisible="state == 'draft'" />
+                    class="oe_highlight" invisible="1" />
                 <button name="action_create_invoice" string="Crear Factura" type="object"
                     class="btn-secondary"
                     invisible="state not in ('confirmed', 'under_repair', 'repaired', 'done')" />
