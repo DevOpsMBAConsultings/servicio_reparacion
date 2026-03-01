@@ -122,7 +122,14 @@ class RepairOrder(models.Model):
 
     def action_print_report(self):
         self.ensure_one()
-        return self.env.ref('servicio_reparacion.action_report_repair_order').report_action(self)
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Imprimir Informe de Taller',
+            'res_model': 'repair.report.wizard',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {'default_repair_id': self.id},
+        }
 
     @api.onchange('partner_id')
     def _onchange_partner_id(self):

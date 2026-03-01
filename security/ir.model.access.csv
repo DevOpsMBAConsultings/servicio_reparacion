@@ -2,3 +2,4 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_fleet_vehicle_servicio,fleet.vehicle.servicio,fleet.model_fleet_vehicle,base.group_user,1,1,1,1
 access_repair_order_servicio,repair.order.servicio,repair.model_repair_order,base.group_user,1,1,1,1
 access_repair_order_image,repair.order.image,model_repair_order_image,base.group_user,1,1,1,1
+access_repair_report_wizard,repair.report.wizard,model_repair_report_wizard,base.group_user,1,1,1,1

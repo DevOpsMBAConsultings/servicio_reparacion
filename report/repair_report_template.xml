@@ -3,7 +3,7 @@
     <template id="report_repair_order_template">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
-                <t t-call="web.external_layout">
+                <t t-call="web.basic_layout">
                     <div class="page">
                         <style>
                             .header-section {
@@ -83,6 +83,27 @@
                             }
                             .data-value {
                             flex: 1;
+                            }
+                            .footer-signatures {
+                            margin-top: 50px;
+                            width: 100%;
+                            }
+                            .signature-box {
+                            width: 45%;
+                            display: inline-block;
+                            text-align: center;
+                            vertical-align: top;
+                            }
+                            .signature-line {
+                            border-top: 1px solid black;
+                            margin-top: 60px;
+                            padding-top: 5px;
+                            font-weight: bold;
+                            }
+                            .report-date {
+                            margin-top: 30px;
+                            text-align: right;
+                            font-style: italic;
                             }
                         </style>
 
@@ -231,6 +252,21 @@
                                         </div>
                                     </t>
                                 </div>
+                            </div>
+                        </div>
+
+                        <!-- CUSTOM FOOTER -->
+                        <div class="report-date"> Fecha del Reporte: <span
+                                t-esc="res_company.env.context.get('report_date')"
+                                t-options='{"widget": "date"}' />
+                        </div>
+
+                        <div class="footer-signatures">
+                            <div class="signature-box" style="margin-right: 8%;">
+                                <div class="signature-line">Firma del Cliente</div>
+                            </div>
+                            <div class="signature-box">
+                                <div class="signature-line">Firma del Técnico</div>
                             </div>
                         </div>
 

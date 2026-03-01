@@ -25,6 +25,7 @@
         'views/repair_order_views.xml',
         'views/res_partner_views.xml',
         'views/sale_order_views.xml',
+        'wizard/repair_report_wizard_views.xml',
         'views/mecanico_views.xml',
         'views/menu_views.xml',
         'report/repair_report.xml',
