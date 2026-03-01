@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Top Level Menu -->
+        <menuitem id="menu_servicio_reparacion_root"
+            name="Servicio de Reparación"
+            sequence="10"
+            web_icon="servicio_reparacion,static/description/icon.png" />
+
+        <!-- Clients Menu -->
+        <menuitem id="menu_servicio_reparacion_clients"
+            name="Clientes"
+            parent="menu_servicio_reparacion_root"
+            action="base.action_partner_customer_form"
+            sequence="10" />
+
+        <!-- Add Window Action for Clients with Filter -->
+        <record id="action_partner_servicio_reparacion" model="ir.actions.act_window">
+            <field name="name">Clientes</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain">[('is_servicio_cliente', '=', True)]</field>
+            <field name="context">{'default_is_servicio_cliente': True, 'is_servicio_app': True,
+                'default_is_company': True}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Crea el primer cliente para tu servicio de reparación
+                </p>
+            </field>
+        </record>
+
+        <!-- Update Clientes menu to use the new action -->
+        <record id="menu_servicio_reparacion_clients" model="ir.ui.menu">
+            <field name="action" ref="action_partner_servicio_reparacion" />
+        </record>
+
+
+        <!-- Fleet Vehicles Menu -->
+        <menuitem id="menu_servicio_reparacion_fleet"
+            name="Flota de Camiones"
+            parent="menu_servicio_reparacion_root"
+            action="fleet.fleet_vehicle_action"
+            sequence="20" />
+
+        <!-- Quotations Window Action with Filter Context -->
+        <record id="action_quotations_servicio_reparacion" model="ir.actions.act_window">
+            <field name="name">Cotizaciones</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">list,kanban,form,calendar,pivot,graph,activity</field>
+            <field name="domain">[('is_servicio_cliente', '=', True)]</field>
+            <field name="context">{'default_is_servicio_cliente': True, 'is_servicio_app': True,
+                'default_is_company': True}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Crea una nueva cotización, el primer paso de una nueva venta.
+                </p>
+                <p> Una vez que la cotización sea confirmada por el cliente, se convertirá en una
+                    orden de venta.<br /> Podrás entonces crear una factura para el cliente. </p>
+            </field>
+        </record>
+
+        <!-- Quotations Menu using the new action -->
+        <menuitem id="menu_servicio_reparacion_quotations"
+            name="Cotizaciones"
+            parent="menu_servicio_reparacion_root"
+            action="action_quotations_servicio_reparacion"
+            sequence="30" />
+
+        <!-- Repair Orders Menu -->
+        <menuitem id="menu_servicio_reparacion_orders"
+            name="Órdenes de Reparación"
+            parent="menu_servicio_reparacion_root"
+            action="repair.action_repair_order_tree"
+            sequence="40" />
+
+        <!-- Configuración Menu -->
+        <menuitem id="menu_servicio_reparacion_config"
+            name="Configuración"
+            parent="menu_servicio_reparacion_root"
+            sequence="50" />
+
+        <menuitem id="menu_servicio_reparacion_mecanicos"
+            name="Mecánicos"
+            parent="menu_servicio_reparacion_config"
+            action="action_servicio_mecanicos"
+            sequence="10" />
+
+        <menuitem id="menu_servicio_reparacion_servicios"
+            name="Servicios"
+            parent="menu_servicio_reparacion_config"
+            action="action_servicio_productos"
+            sequence="20" />
+    </data>
+</odoo>

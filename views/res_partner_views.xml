@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form_inherit_servicio" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.servicio</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+
+            <!-- Smart buttons: Flota and Órdenes de Reparación (visible only for repair service
+            customers) -->
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button type="object"
+                    name="action_view_fleet"
+                    class="oe_stat_button"
+                    icon="fa-truck"
+                    invisible="not is_servicio_cliente">
+                    <field name="vehicle_count" widget="statinfo" string="Flota" />
+                </button>
+                <button type="object"
+                    name="action_view_repair_orders"
+                    class="oe_stat_button"
+                    icon="fa-wrench"
+                    invisible="not is_servicio_cliente">
+                    <field name="repair_order_count" widget="statinfo" string="Reparaciones" />
+                </button>
+            </xpath>
+
+            <!-- Is Customer field -->
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="is_servicio_cliente" readonly="context.get('is_servicio_app', False)" />
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

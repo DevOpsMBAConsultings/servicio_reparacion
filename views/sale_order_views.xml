@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit Sale Order form to filter partner_id and add repair features -->
+        <record id="view_order_form_inherit_servicio_reparacion" model="ir.ui.view">
+            <field name="name">sale.order.form.inherit.servicio.reparacion</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+
+                <!-- Filter partner to repair service customers -->
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+                    <attribute name="domain">[('is_servicio_cliente', '=', True)]</attribute>
+                </xpath>
+
+                <!-- Add vehicle field below partner_id -->
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="fleet_vehicle_id" string="Vehículo a Reparar"
+                        domain="[('customer_id', '=', partner_id)]"
+                        context="{'default_customer_id': partner_id}" />
+                </xpath>
+
+                <!-- Add "Generar / Ver Orden de Reparación" button in the status bar -->
+                <xpath expr="//button[@name='action_cancel']" position="before">
+                    <button name="action_create_repair_order"
+                        string="Generar Orden de Reparación"
+                        type="object"
+                        class="btn-secondary"
+                        invisible="state not in ('sale', 'done') or repair_order_id" />
+                    <button name="action_create_repair_order"
+                        string="Ver Orden de Reparación"
+                        type="object"
+                        class="btn-secondary"
+                        invisible="not repair_order_id" />
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_repair_order_form_inherit_servicio" model="ir.ui.view">
+        <field name="name">repair.order.form.inherit.servicio</field>
+        <field name="model">repair.order</field>
+        <field name="inherit_id" ref="repair.view_repair_order_form" />
+        <field name="arch" type="xml">
+            <!-- Add Stat Buttons -->
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_quotations"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-usd"
+                    invisible="sale_order_count == 0">
+                    <field name="sale_order_count" widget="statinfo" string="Cotizaciones" />
+                </button>
+                <button name="action_view_invoices"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-file-text-o"
+                    invisible="invoice_count == 0">
+                    <field name="invoice_count" widget="statinfo" string="Facturas" />
+                </button>
+            </xpath>
+
+            <!-- Add Header Buttons -->
+            <xpath expr="//header" position="inside">
+                <button name="action_create_quotation" string="Crear Cotización" type="object"
+                    class="oe_highlight" invisible="state == 'draft'" />
+                <button name="action_create_invoice" string="Crear Factura" type="object"
+                    class="btn-secondary"
+                    invisible="state not in ('confirmed', 'under_repair', 'repaired', 'done')" />
+                <button name="action_print_report"
+                    string="Imprimir Reporte"
+                    type="object"
+                    class="btn-secondary" />
+            </xpath>
+
+            <!-- Add Fields below Partner -->
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="partner_email" />
+                <field name="partner_street" />
+                <field name="partner_phone" />
+                <separator string="Información del Vehículo" />
+                <field name="vehicle_id" domain="[('customer_id', '=', partner_id)]"
+                    context="{'default_customer_id': partner_id}" />
+                <field name="vehicle_brand" />
+                <field name="vehicle_vin" />
+                <field name="vehicle_plate" />
+            </xpath>
+
+            <!-- Add Custom Notebook Page for Details -->
+            <xpath expr="//notebook" position="inside">
+                <page string="Detalles de Reparación">
+
+                    <group>
+                        <separator string="Antecedentes del Servicio" colspan="2" />
+                        <field name="antecedentes_servicio"
+                            nolabel="1"
+                            colspan="2"
+                            placeholder="Favor introducir los detalles de Antecedentes del Servicio..." />
+                    </group>
+
+                    <group>
+                        <separator string="Hallazgos" colspan="2" />
+                        <field name="hallazgos"
+                            nolabel="1"
+                            colspan="2"
+                            placeholder="Favor introducir los detalles de Hallazgos..." />
+                    </group>
+
+                    <group>
+                        <separator string="Acción Correctiva" colspan="2" />
+                        <field name="accion_correctiva"
+                            nolabel="1"
+                            colspan="2"
+                            placeholder="Favor introducir los detalles de Acción Correctiva..." />
+                    </group>
+
+                    <group>
+                        <separator string="Recomendaciones" colspan="2" />
+                        <field name="recomendaciones"
+                            nolabel="1"
+                            colspan="2"
+                            placeholder="Favor introducir los detalles de Recomendaciones..." />
+                    </group>
+
+                </page>
+            </xpath>
+
+            <!-- Add Técnico Asignado field in the repair info section -->
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="mecanico_id" string="Técnico Asignado"
+                    context="{'default_is_mecanico': True}"
+                    domain="[('is_mecanico', '=', True)]" />
+            </xpath>
+
+            <!-- Hide Repair Notes tab -->
+            <xpath expr="//page[@name='repair_notes']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <!-- Add Imágenes tab -->
+            <xpath expr="//notebook" position="inside">
+                <page string="Imágenes">
+                    <div class="o_repair_images_hint text-muted small mb-2"
+                        invisible="image_count >= 6">
+                        Puedes agregar hasta 6 imágenes por orden de reparación.
+                    </div>
+                    <field name="image_ids"
+                        widget="one2many"
+                        string="Imágenes"
+                        nolabel="1">
+                        <kanban>
+                            <field name="image" />
+                            <field name="description" />
+                            <templates>
+                                <t t-name="card">
+                                    <div class="o_kanban_image_card"
+                                        style="text-align:center; padding:8px;">
+                                        <!-- Image preview -->
+                                        <div
+                                            style="width:180px; height:140px; margin:0 auto; overflow:hidden; border:1px solid #dee2e6; border-radius:6px; background:#f8f9fa; display:flex; align-items:center; justify-content:center;">
+                                            <t t-if="record.image.raw_value">
+                                                <img
+                                                    t-att-src="'data:image/png;base64,' + record.image.raw_value"
+                                                    style="max-width:100%; max-height:100%; object-fit:contain;" />
+                                            </t>
+                                            <t t-else="">
+                                                <span class="text-muted fa fa-image fa-3x" />
+                                            </t>
+                                        </div>
+                                        <!-- Description -->
+                                        <div class="mt-2" style="width:180px; margin:0 auto;">
+                                            <field name="description"
+                                                placeholder="Descripción de la imagen..."
+                                                class="text-center" />
+                                        </div>
+                                        <!-- Upload field -->
+                                        <div class="mt-1">
+                                            <field name="image" widget="image"
+                                                options="{'size': [180, 140], 'preview_image': 'image'}" />
+                                        </div>
+                                    </div>
+                                </t>
+                            </templates>
+                        </kanban>
+                        <list>
+                            <field name="image" widget="image" options="{'size': [64, 64]}" />
+                            <field name="description" placeholder="Descripción..." />
+                        </list>
+                        <form>
+                            <group>
+                                <field name="image" widget="image"
+                                    options="{'size': [640, 480]}"
+                                    string="Imagen" />
+                                <field name="description" string="Descripción"
+                                    placeholder="Favor introducir una descripción de la imagen..." />
+                            </group>
+                        </form>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

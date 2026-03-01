@@ -1,0 +1,14 @@
+# Odoo
+*.pyc
+*.pyo
+*~
+*.log
+__pycache__/
+
+# Mac
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+.antigravityignore
