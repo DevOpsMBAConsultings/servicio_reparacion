@@ -186,7 +186,8 @@
                                 </td>
 
                                 <!-- Spacer Column -->
-                                <td style="width: 2%;"></td>
+                                <td
+                                    style="width: 2%; border: none !important; background: transparent;"></td>
 
                                 <!-- Right Column: DATOS DEL EQUIPO -->
                                 <td
