@@ -21,7 +21,7 @@ class RepairOrderImage(models.Model):
     @api.constrains('repair_order_id')
     def _check_max_images(self):
         for rec in self:
-            if len(rec.repair_order_id.image_ids) > 6:
+            if len(rec.repair_order_id.image_ids) > 15:
                 raise ValidationError(
-                    'Se permite un máximo de 6 imágenes por orden de reparación.'
+                    'Se permite un máximo de 15 imágenes por orden de reparación.'
                 )

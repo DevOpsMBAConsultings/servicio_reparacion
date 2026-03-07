@@ -198,6 +198,19 @@
                                                 <span t-field="doc.vehicle_id.license_plate" />
                                             </div>
                                         </div>
+                                        <div class="data-row">
+                                            <div class="data-label" style="width: 80px;">
+                                                KM/ODÓMETRO:</div>
+                                            <div class="data-value">
+                                                <span t-field="doc.odometer" />
+                                            </div>
+                                        </div>
+                                        <div class="data-row">
+                                            <div class="data-label" style="width: 80px;">HORAS:</div>
+                                            <div class="data-value">
+                                                <span t-field="doc.vehicle_horas" />
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -271,21 +284,7 @@
                                         t-options='{"widget": "date"}' />
                                 </div>
 
-                                <div class="footer-signatures"
-                                    style="margin-top: 50px; width: 100%;">
-                                    <div class="signature-box"
-                                        style="width: 45%; display: inline-block; text-align: center; vertical-align: top; margin-right: 8%;">
-                                        <div class="signature-line"
-                                            style="border-top: 2px solid black; margin-top: 60px; padding-top: 5px; font-weight: bold;">Firma
-                                            del Cliente</div>
-                                    </div>
-                                    <div class="signature-box"
-                                        style="width: 45%; display: inline-block; text-align: center; vertical-align: top;">
-                                        <div class="signature-line"
-                                            style="border-top: 2px solid black; margin-top: 60px; padding-top: 5px; font-weight: bold;">Firma
-                                            del Técnico</div>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
 

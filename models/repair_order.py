@@ -21,7 +21,12 @@ class RepairOrder(models.Model):
     vehicle_vin = fields.Char(string='Número de Chassis', related='vehicle_id.vin_sn', readonly=True)
     vehicle_plate = fields.Char(string='Placa', related='vehicle_id.license_plate', readonly=True)
 
-    # Images (max 6)
+    # Added manually by user (vehicle usage) 
+    odometer = fields.Float(string='KM (Odómetro)', related='vehicle_id.odometer', readonly=False)
+    vehicle_horas = fields.Char(string='Horas', related='vehicle_id.vehicle_horas', readonly=False)
+    location = fields.Char(string='Ubicación', related='vehicle_id.location', readonly=False)
+
+    # Images (max 15)
     image_ids = fields.One2many('repair.order.image', 'repair_order_id', string='Imágenes')
     image_count = fields.Integer(compute='_compute_image_count', string='Cantidad de Imágenes')
 

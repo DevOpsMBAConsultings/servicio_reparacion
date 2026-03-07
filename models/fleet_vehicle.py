@@ -5,3 +5,4 @@ class FleetVehicle(models.Model):
     _inherit = 'fleet.vehicle'
 
     customer_id = fields.Many2one('res.partner', string='Cliente')
+    vehicle_horas = fields.Char(string='Horas')
