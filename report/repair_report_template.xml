@@ -6,6 +6,10 @@
                 <t t-call="web.basic_layout">
                     <div class="page">
                         <style>
+                            .page, .page * {
+                            font-family: Arial, sans-serif !important;
+                            font-size: 12px !important;
+                            }
                             .header-section {
                             border: 2px solid #333;
                             margin-bottom: 20px;
@@ -26,7 +30,7 @@
                             .header-col-center {
                             display: table-cell;
                             width: 50%;
-                            background-color: #0052CC;
+                            background-color: #2A3382;
                             color: white;
                             text-align: center;
                             padding: 20px;
@@ -35,7 +39,6 @@
                             .header-col-center h2 {
                             margin: 0;
                             color: white;
-                            font-size: 26px;
                             text-transform: uppercase;
                             font-weight: bold;
                             letter-spacing: 1px;
@@ -48,8 +51,11 @@
                             vertical-align: middle;
                             }
                             .header-section img {
-                            max-height: 80px;
+                            max-height: 138px;
                             max-width: 100%;
+                            }
+                            .header-col-left img {
+                            max-height: 152px;
                             }
                             .section-wrapper {
                             page-break-inside: avoid;
@@ -57,19 +63,18 @@
                             widows: 3;
                             }
                             .section-title {
-                            background-color: #0052CC;
+                            background-color: #2A3382;
                             color: white;
                             padding: 10px 15px;
                             margin-top: 20px;
-                            margin-bottom: 10px;
-                            font-size: 14px;
+                            margin-bottom: 0;
                             font-weight: bold;
                             text-transform: uppercase;
                             page-break-after: avoid;
                             }
                             .section-content {
                             padding: 10px 15px;
-                            border: 1px solid #ddd;
+                            border: 1px solid #2A3382;
                             border-top: none;
                             page-break-inside: avoid;
                             }
@@ -233,25 +238,25 @@
                             </div>
                         </div>
 
-                        <div class="section-wrapper" t-if="doc.image_ids">
+                        <div class="section-wrapper">
                             <div class="section-title">7. IMÁGENES:</div>
                             <div class="section-content">
-                                <div class="row">
-                                    <t t-foreach="doc.image_ids" t-as="img">
-                                        <div class="col-4 mb-4" style="text-align: center;">
-                                            <div
-                                                style="border: 1px solid #ddd; padding: 5px; border-radius: 4px;">
-                                                <img t-if="img.image"
-                                                    t-att-src="image_data_uri(img.image)"
-                                                    style="max-width: 100%; max-height: 200px; display: block; margin: 0 auto;" />
-                                                <div t-if="img.description"
-                                                    style="font-size: 11px; margin-top: 5px; color: #666; font-style: italic;">
-                                                    <span t-field="img.description" />
-                                                </div>
+                                <t t-foreach="doc.image_ids" t-as="img">
+                                    <div
+                                        style="float: left; width: 33%; padding: 5px; text-align: center; box-sizing: border-box; page-break-inside: avoid;">
+                                        <div
+                                            style="border: 1px solid #2A3382; padding: 5px; border-radius: 4px;">
+                                            <img t-if="img.image"
+                                                t-att-src="image_data_uri(img.image)"
+                                                style="max-width: 100%; max-height: 200px; display: block; margin: 0 auto;" />
+                                            <div t-if="img.description"
+                                                style="margin-top: 5px; color: #666; font-style: italic;">
+                                                <span t-field="img.description" />
                                             </div>
                                         </div>
-                                    </t>
-                                </div>
+                                    </div>
+                                </t>
+                                <div style="clear: both;"></div>
                             </div>
                         </div>
 
