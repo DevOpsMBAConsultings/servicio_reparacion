@@ -81,42 +81,52 @@
                             page-break-inside: auto;
                             }
                             .section-table thead {
-                            display: table-header-group;
-                            line-height: 1.0 !important;
+                            display: table-header-group; /* Repeats on every page */
+                            }
+                            .section-table thead tr {
+                            height: 0;
+                            line-height: 0;
                             }
                             .section-table thead th {
+                            padding: 0 !important;
+                            margin: 0 !important;
+                            border-top: 2px solid #2A3382 !important; /* The 'top border' that
+                            repeats */
+                            height: 0;
+                            line-height: 0;
+                            }
+                            /* First page title row (Non-repeating) */
+                            .section-table tbody .title-row td {
                             background-color: #2A3382;
                             color: white;
                             padding: 10px 15px !important;
                             font-weight: bold;
                             text-transform: uppercase;
-                            border: none;
-                            text-align: left !important;
                             font-size: 14px !important;
-                            line-height: 1.0 !important;
-                            margin: 0 !important;
+                            border: none;
+                            line-height: 1.1 !important;
                             }
                             .section-table tbody td {
                             padding: 10px 15px !important;
                             vertical-align: top;
                             border: none;
                             text-align: left !important;
-                            line-height: 1.0 !important;
+                            line-height: 1.1 !important; /* Very compact */
                             margin: 0 !important;
                             }
                             .section-table tbody td * {
                             margin: 0 !important;
                             padding: 0 !important;
-                            line-height: 1.0 !important;
-                            display: inline; /* Ensure t-field elements don't add blocks */
+                            line-height: 1.1 !important;
+                            display: inline;
                             }
                             .section-table tfoot {
-                            display: table-footer-group;
-                            line-height: 0 !important;
+                            display: table-footer-group; /* Repeats on every page */
                             }
                             .section-table tfoot td {
                             height: 0;
-                            border-top: 2px solid #2A3382 !important;
+                            border-top: 2px solid #2A3382 !important; /* The 'bottom border' that
+                            repeats */
                             padding: 0 !important;
                             line-height: 0 !important;
                             font-size: 0 !important;
@@ -130,7 +140,7 @@
                             text-transform: uppercase;
                             margin: 0;
                             font-size: 14px !important;
-                            line-height: 1.0 !important;
+                            line-height: 1.1 !important;
                             }
                             .data-row {
                             display: table;
@@ -303,7 +313,7 @@
                         <table class="section-table">
                             <thead>
                                 <tr>
-                                    <th>3. ANTECEDENTES DEL SERVICIO:</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -312,10 +322,14 @@
                                 </tr>
                             </tfoot>
                             <tbody>
+                                <tr class="title-row">
+                                    <td>3. ANTECEDENTES DEL SERVICIO:</td>
+                                </tr>
                                 <tr>
                                     <td class="text-start">
-                                        <span t-field="doc.antecedentes_servicio"
-                                            style="white-space: pre-wrap !important;" />
+                                        <div style="white-space: pre-wrap !important;">
+                                            <t t-esc="doc.antecedentes_servicio" />
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>
@@ -325,7 +339,7 @@
                         <table class="section-table">
                             <thead>
                                 <tr>
-                                    <th>4. HALLAZGOS:</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -334,10 +348,14 @@
                                 </tr>
                             </tfoot>
                             <tbody>
+                                <tr class="title-row">
+                                    <td>4. HALLAZGOS:</td>
+                                </tr>
                                 <tr>
                                     <td class="text-start">
-                                        <span t-field="doc.hallazgos"
-                                            style="white-space: pre-wrap !important;" />
+                                        <div style="white-space: pre-wrap !important;">
+                                            <t t-esc="doc.hallazgos" />
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>
@@ -347,7 +365,7 @@
                         <table class="section-table">
                             <thead>
                                 <tr>
-                                    <th>5. ACCIÓN CORRECTIVA:</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -356,10 +374,14 @@
                                 </tr>
                             </tfoot>
                             <tbody>
+                                <tr class="title-row">
+                                    <td>5. ACCIÓN CORRECTIVA:</td>
+                                </tr>
                                 <tr>
                                     <td class="text-start">
-                                        <span t-field="doc.accion_correctiva"
-                                            style="white-space: pre-wrap !important;" />
+                                        <div style="white-space: pre-wrap !important;">
+                                            <t t-esc="doc.accion_correctiva" />
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>
@@ -369,7 +391,7 @@
                         <table class="section-table">
                             <thead>
                                 <tr>
-                                    <th>6. RECOMENDACIONES:</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -378,10 +400,14 @@
                                 </tr>
                             </tfoot>
                             <tbody>
+                                <tr class="title-row">
+                                    <td>6. RECOMENDACIONES:</td>
+                                </tr>
                                 <tr>
                                     <td class="text-start">
-                                        <span t-field="doc.recomendaciones"
-                                            style="white-space: pre-wrap !important;" />
+                                        <div style="white-space: pre-wrap !important;">
+                                            <t t-esc="doc.recomendaciones" />
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>
@@ -392,7 +418,7 @@
                         <table class="section-table">
                             <thead>
                                 <tr>
-                                    <th>7. IMÁGENES:</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -401,6 +427,9 @@
                                 </tr>
                             </tfoot>
                             <tbody>
+                                <tr class="title-row">
+                                    <td>7. IMÁGENES:</td>
+                                </tr>
                                 <tr>
                                     <td style="padding: 15px !important;">
                                         <t t-foreach="doc.image_ids" t-as="img">
