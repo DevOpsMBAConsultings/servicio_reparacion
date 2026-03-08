@@ -305,14 +305,15 @@
                         <!-- Section 3: ANTECEDENTES -->
                         <div style="height: 20px; width: 100%; clear: both;" />
                         <table class="section-table"
-                            style="page-break-inside: avoid; margin-top: 40px;">
-                            <thead>
-                                <tr>
-                                    <th>3. ANTECEDENTES DEL SERVICIO:</th>
-                                </tr>
-                            </thead>
+                            style="page-break-inside: auto; margin-top: 40px;">
                             <tbody>
-                                <tr style="page-break-inside: avoid;">
+                                <tr style="page-break-after: avoid;">
+                                    <th
+                                        style="background-color: #2A3382; color: white; padding: 10px 15px; text-align: left !important; font-weight: bold; text-transform: uppercase; border: none;">
+                                        3. ANTECEDENTES DEL SERVICIO:
+                                    </th>
+                                </tr>
+                                <tr style="page-break-inside: auto;">
                                     <td class="text-start"
                                         style="text-align: left !important; padding: 0 15px !important;">
                                         <span
@@ -326,14 +327,15 @@
                         <!-- Section 4: HALLAZGOS -->
                         <div style="height: 20px; width: 100%; clear: both;" />
                         <table class="section-table"
-                            style="page-break-inside: avoid; margin-top: 40px;">
-                            <thead>
-                                <tr>
-                                    <th>4. HALLAZGOS:</th>
-                                </tr>
-                            </thead>
+                            style="page-break-inside: auto; margin-top: 40px;">
                             <tbody>
-                                <tr style="page-break-inside: avoid;">
+                                <tr style="page-break-after: avoid;">
+                                    <th
+                                        style="background-color: #2A3382; color: white; padding: 10px 15px; text-align: left !important; font-weight: bold; text-transform: uppercase; border: none;">
+                                        4. HALLAZGOS:
+                                    </th>
+                                </tr>
+                                <tr style="page-break-inside: auto;">
                                     <td class="text-start"
                                         style="text-align: left !important; padding: 0 15px !important;">
                                         <span
@@ -347,14 +349,15 @@
                         <!-- Section 5: ACCIÓN CORRECTIVA -->
                         <div style="height: 20px; width: 100%; clear: both;" />
                         <table class="section-table"
-                            style="page-break-inside: avoid; margin-top: 40px;">
-                            <thead>
-                                <tr>
-                                    <th>5. ACCIÓN CORRECTIVA:</th>
-                                </tr>
-                            </thead>
+                            style="page-break-inside: auto; margin-top: 40px;">
                             <tbody>
-                                <tr style="page-break-inside: avoid;">
+                                <tr style="page-break-after: avoid;">
+                                    <th
+                                        style="background-color: #2A3382; color: white; padding: 10px 15px; text-align: left !important; font-weight: bold; text-transform: uppercase; border: none;">
+                                        5. ACCIÓN CORRECTIVA:
+                                    </th>
+                                </tr>
+                                <tr style="page-break-inside: auto;">
                                     <td class="text-start"
                                         style="text-align: left !important; padding: 0 15px !important;">
                                         <span
@@ -368,14 +371,15 @@
                         <!-- Section 6: RECOMENDACIONES -->
                         <div style="height: 20px; width: 100%; clear: both;" />
                         <table class="section-table"
-                            style="page-break-inside: avoid; margin-top: 40px;">
-                            <thead>
-                                <tr>
-                                    <th>6. RECOMENDACIONES:</th>
-                                </tr>
-                            </thead>
+                            style="page-break-inside: auto; margin-top: 40px;">
                             <tbody>
-                                <tr style="page-break-inside: avoid;">
+                                <tr style="page-break-after: avoid;">
+                                    <th
+                                        style="background-color: #2A3382; color: white; padding: 10px 15px; text-align: left !important; font-weight: bold; text-transform: uppercase; border: none;">
+                                        6. RECOMENDACIONES:
+                                    </th>
+                                </tr>
+                                <tr style="page-break-inside: auto;">
                                     <td class="text-start"
                                         style="text-align: left !important; padding: 0 15px !important;">
                                         <span
