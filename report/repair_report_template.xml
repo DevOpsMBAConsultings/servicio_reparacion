@@ -303,88 +303,44 @@
                         </table>
 
                         <!-- Section 3: ANTECEDENTES -->
-                        <div style="height: 20px; width: 100%; clear: both;" />
-                        <table class="section-table"
-                            style="margin-top: 40px;">
-                            <tbody>
-                                <tr>
-                                    <th
-                                        style="background-color: #2A3382; color: white; padding: 10px 15px; text-align: left !important; font-weight: bold; text-transform: uppercase;">
-                                        3. ANTECEDENTES DEL SERVICIO:
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <td class="text-start"
-                                        style="text-align: left !important; padding: 0 15px !important;">
-                                        <span t-field="doc.antecedentes_servicio"
-                                            style="text-align: left !important; display: block !important; white-space: pre-wrap !important;" />
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <!-- Section 3: ANTECEDENTES -->
+                        <div class="section-wrapper">
+                            <div class="section-title">3. ANTECEDENTES DEL SERVICIO:</div>
+                            <div class="section-content">
+                                <span t-field="doc.antecedentes_servicio"
+                                    style="white-space: pre-wrap !important;" />
+                            </div>
+                        </div>
 
                         <!-- Section 4: HALLAZGOS -->
-                        <div style="height: 20px; width: 100%; clear: both;" />
-                        <table class="section-table"
-                            style="margin-top: 40px;">
-                            <tbody>
-                                <tr>
-                                    <th
-                                        style="background-color: #2A3382; color: white; padding: 10px 15px; text-align: left !important; font-weight: bold; text-transform: uppercase;">
-                                        4. HALLAZGOS:
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <td class="text-start"
-                                        style="text-align: left !important; padding: 0 15px !important;">
-                                        <span t-field="doc.hallazgos"
-                                            style="text-align: left !important; display: block !important; white-space: pre-wrap !important;" />
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <!-- Section 4: HALLAZGOS -->
+                        <div class="section-wrapper">
+                            <div class="section-title">4. HALLAZGOS:</div>
+                            <div class="section-content">
+                                <span t-field="doc.hallazgos"
+                                    style="white-space: pre-wrap !important;" />
+                            </div>
+                        </div>
 
                         <!-- Section 5: ACCIÓN CORRECTIVA -->
-                        <div style="height: 20px; width: 100%; clear: both;" />
-                        <table class="section-table"
-                            style="margin-top: 40px;">
-                            <tbody>
-                                <tr>
-                                    <th
-                                        style="background-color: #2A3382; color: white; padding: 10px 15px; text-align: left !important; font-weight: bold; text-transform: uppercase;">
-                                        5. ACCIÓN CORRECTIVA:
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <td class="text-start"
-                                        style="text-align: left !important; padding: 0 15px !important;">
-                                        <span t-field="doc.accion_correctiva"
-                                            style="text-align: left !important; display: block !important; white-space: pre-wrap !important;" />
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <!-- Section 5: ACCIÓN CORRECTIVA -->
+                        <div class="section-wrapper">
+                            <div class="section-title">5. ACCIÓN CORRECTIVA:</div>
+                            <div class="section-content">
+                                <span t-field="doc.accion_correctiva"
+                                    style="white-space: pre-wrap !important;" />
+                            </div>
+                        </div>
 
                         <!-- Section 6: RECOMENDACIONES -->
-                        <div style="height: 20px; width: 100%; clear: both;" />
-                        <table class="section-table"
-                            style="margin-top: 40px;">
-                            <tbody>
-                                <tr>
-                                    <th
-                                        style="background-color: #2A3382; color: white; padding: 10px 15px; text-align: left !important; font-weight: bold; text-transform: uppercase;">
-                                        6. RECOMENDACIONES:
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <td class="text-start"
-                                        style="text-align: left !important; padding: 0 15px !important;">
-                                        <span t-field="doc.recomendaciones"
-                                            style="text-align: left !important; display: block !important; white-space: pre-wrap !important;" />
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <!-- Section 6: RECOMENDACIONES -->
+                        <div class="section-wrapper">
+                            <div class="section-title">6. RECOMENDACIONES:</div>
+                            <div class="section-content">
+                                <span t-field="doc.recomendaciones"
+                                    style="white-space: pre-wrap !important;" />
+                            </div>
+                        </div>
 
                         <div style="height: 20px; width: 100%; clear: both;" />
                         <div class="section-wrapper" style="margin-top: 40px;">
