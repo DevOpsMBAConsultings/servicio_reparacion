@@ -25,7 +25,7 @@
                             text-align: center !important;
                             }
                             .header-section {
-                            border: 2px solid #333;
+                            border: 2px solid #2A3382;
                             margin-bottom: 20px;
                             width: 100%;
                             }
@@ -79,7 +79,7 @@
                             }
                             .section-table {
                             width: 100%;
-                            border-collapse: separate;
+                            border-collapse: collapse;
                             border-spacing: 0;
                             border: 2px solid #2A3382;
                             table-layout: fixed;
@@ -108,11 +108,11 @@
                             .section-table thead { display: table-header-group; }
                             .section-table tfoot { display: table-footer-group; }
                             .section-table tfoot tr td {
-                            height: 2px;
-                            background-color: #2A3382;
+                            height: 0;
+                            background-color: transparent;
                             padding: 0;
-                            line-height: 2px;
-                            font-size: 1px;
+                            line-height: 0;
+                            font-size: 0;
                             }
                             .section-title {
                             background-color: #2A3382;
@@ -320,12 +320,6 @@
                                     </td>
                                 </tr>
                             </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td style="height: 2px; background-color: #2A3382; padding: 0;">
-                                        &amp;nbsp;</td>
-                                </tr>
-                            </tfoot>
                         </table>
 
                         <!-- Section 4: HALLAZGOS -->
@@ -347,12 +341,6 @@
                                     </td>
                                 </tr>
                             </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td style="height: 2px; background-color: #2A3382; padding: 0;">
-                                        &amp;nbsp;</td>
-                                </tr>
-                            </tfoot>
                         </table>
 
                         <!-- Section 5: ACCIÓN CORRECTIVA -->
@@ -374,12 +362,6 @@
                                     </td>
                                 </tr>
                             </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td style="height: 2px; background-color: #2A3382; padding: 0;">
-                                        &amp;nbsp;</td>
-                                </tr>
-                            </tfoot>
                         </table>
 
                         <!-- Section 6: RECOMENDACIONES -->
@@ -401,12 +383,6 @@
                                     </td>
                                 </tr>
                             </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td style="height: 2px; background-color: #2A3382; padding: 0;">
-                                        &amp;nbsp;</td>
-                                </tr>
-                            </tfoot>
                         </table>
 
                         <div style="height: 20px; width: 100%; clear: both;" />
