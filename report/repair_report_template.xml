@@ -305,19 +305,18 @@
                         <!-- Section 3: ANTECEDENTES -->
                         <div style="height: 20px; width: 100%; clear: both;" />
                         <table class="section-table"
-                            style="page-break-inside: auto; margin-top: 40px;">
+                            style="margin-top: 40px;">
                             <tbody>
-                                <tr style="page-break-after: avoid;">
+                                <tr>
                                     <th
-                                        style="background-color: #2A3382; color: white; padding: 10px 15px; text-align: left !important; font-weight: bold; text-transform: uppercase; border: none;">
+                                        style="background-color: #2A3382; color: white; padding: 10px 15px; text-align: left !important; font-weight: bold; text-transform: uppercase;">
                                         3. ANTECEDENTES DEL SERVICIO:
                                     </th>
                                 </tr>
-                                <tr style="page-break-inside: auto;">
+                                <tr>
                                     <td class="text-start"
                                         style="text-align: left !important; padding: 0 15px !important;">
-                                        <span
-                                            t-esc="(doc.antecedentes_servicio or '').replace('\xa0', ' ')"
+                                        <span t-field="doc.antecedentes_servicio"
                                             style="text-align: left !important; display: block !important; white-space: pre-wrap !important;" />
                                     </td>
                                 </tr>
@@ -327,19 +326,18 @@
                         <!-- Section 4: HALLAZGOS -->
                         <div style="height: 20px; width: 100%; clear: both;" />
                         <table class="section-table"
-                            style="page-break-inside: auto; margin-top: 40px;">
+                            style="margin-top: 40px;">
                             <tbody>
-                                <tr style="page-break-after: avoid;">
+                                <tr>
                                     <th
-                                        style="background-color: #2A3382; color: white; padding: 10px 15px; text-align: left !important; font-weight: bold; text-transform: uppercase; border: none;">
+                                        style="background-color: #2A3382; color: white; padding: 10px 15px; text-align: left !important; font-weight: bold; text-transform: uppercase;">
                                         4. HALLAZGOS:
                                     </th>
                                 </tr>
-                                <tr style="page-break-inside: auto;">
+                                <tr>
                                     <td class="text-start"
                                         style="text-align: left !important; padding: 0 15px !important;">
-                                        <span
-                                            t-esc="(doc.hallazgos or '').replace('\xa0', ' ')"
+                                        <span t-field="doc.hallazgos"
                                             style="text-align: left !important; display: block !important; white-space: pre-wrap !important;" />
                                     </td>
                                 </tr>
@@ -349,19 +347,18 @@
                         <!-- Section 5: ACCIÓN CORRECTIVA -->
                         <div style="height: 20px; width: 100%; clear: both;" />
                         <table class="section-table"
-                            style="page-break-inside: auto; margin-top: 40px;">
+                            style="margin-top: 40px;">
                             <tbody>
-                                <tr style="page-break-after: avoid;">
+                                <tr>
                                     <th
-                                        style="background-color: #2A3382; color: white; padding: 10px 15px; text-align: left !important; font-weight: bold; text-transform: uppercase; border: none;">
+                                        style="background-color: #2A3382; color: white; padding: 10px 15px; text-align: left !important; font-weight: bold; text-transform: uppercase;">
                                         5. ACCIÓN CORRECTIVA:
                                     </th>
                                 </tr>
-                                <tr style="page-break-inside: auto;">
+                                <tr>
                                     <td class="text-start"
                                         style="text-align: left !important; padding: 0 15px !important;">
-                                        <span
-                                            t-esc="(doc.accion_correctiva or '').replace('\xa0', ' ')"
+                                        <span t-field="doc.accion_correctiva"
                                             style="text-align: left !important; display: block !important; white-space: pre-wrap !important;" />
                                     </td>
                                 </tr>
@@ -371,19 +368,18 @@
                         <!-- Section 6: RECOMENDACIONES -->
                         <div style="height: 20px; width: 100%; clear: both;" />
                         <table class="section-table"
-                            style="page-break-inside: auto; margin-top: 40px;">
+                            style="margin-top: 40px;">
                             <tbody>
-                                <tr style="page-break-after: avoid;">
+                                <tr>
                                     <th
-                                        style="background-color: #2A3382; color: white; padding: 10px 15px; text-align: left !important; font-weight: bold; text-transform: uppercase; border: none;">
+                                        style="background-color: #2A3382; color: white; padding: 10px 15px; text-align: left !important; font-weight: bold; text-transform: uppercase;">
                                         6. RECOMENDACIONES:
                                     </th>
                                 </tr>
-                                <tr style="page-break-inside: auto;">
+                                <tr>
                                     <td class="text-start"
                                         style="text-align: left !important; padding: 0 15px !important;">
-                                        <span
-                                            t-esc="(doc.recomendaciones or '').replace('\xa0', ' ')"
+                                        <span t-field="doc.recomendaciones"
                                             style="text-align: left !important; display: block !important; white-space: pre-wrap !important;" />
                                     </td>
                                 </tr>
