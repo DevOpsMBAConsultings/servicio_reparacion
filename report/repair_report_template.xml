@@ -6,9 +6,23 @@
                 <t t-call="web.basic_layout">
                     <div class="page">
                         <style>
-                            .page, .page * {
+                            .page {
+                            text-align: left !important;
+                            width: 100% !important;
+                            }
+                            /* Forzar alineación a la izquierda en absolutamente todo dentro de
+                            .page */
+                            .page * {
+                            text-align: left !important;
                             font-family: Arial, sans-serif !important;
                             font-size: 14px !important;
+                            }
+                            /* Excepciones específicas para elementos que SÍ deben estar centrados
+                            */
+                            .header-col-left, .header-col-center, .header-col-right,
+                            .header-col-center h2, .header-section img,
+                            .signature-box, .signature-line {
+                            text-align: center !important;
                             }
                             .header-section {
                             border: 2px solid #333;
@@ -23,7 +37,7 @@
                             .header-col-left {
                             display: table-cell;
                             width: 25%;
-                            text-align: center;
+                            text-align: center !important;
                             padding: 10px;
                             vertical-align: middle;
                             }
@@ -32,7 +46,7 @@
                             width: 50%;
                             background-color: #2A3382;
                             color: white;
-                            text-align: center;
+                            text-align: center !important;
                             padding: 20px;
                             vertical-align: middle;
                             }
@@ -43,11 +57,12 @@
                             font-weight: bold;
                             letter-spacing: 1px;
                             font-size: 20px !important;
+                            text-align: center !important;
                             }
                             .header-col-right {
                             display: table-cell;
                             width: 25%;
-                            text-align: center;
+                            text-align: center !important;
                             padding: 10px;
                             vertical-align: middle;
                             }
@@ -59,9 +74,44 @@
                             max-height: 190px;
                             }
                             .section-wrapper {
-                            page-break-inside: avoid;
-                            orphans: 3;
-                            widows: 3;
+                            margin-top: 20px;
+                            width: 100%;
+                            }
+                            .section-table {
+                            width: 100%;
+                            border-collapse: separate;
+                            border-spacing: 0;
+                            border: 2px solid #2A3382;
+                            table-layout: fixed;
+                            text-align: left !important;
+                            }
+                            .section-table thead tr th {
+                            background-color: #2A3382;
+                            color: white;
+                            padding: 10px 15px;
+                            text-align: left !important;
+                            font-weight: bold;
+                            text-transform: uppercase;
+                            border: none;
+                            }
+                            .section-table tbody tr td, .section-table * {
+                            text-align: left !important;
+                            }
+                            .section-table tbody tr td {
+                            padding: 1px 15px !important;
+                            vertical-align: top;
+                            border: none;
+                            line-height: 1.2;
+                            white-space: pre-wrap !important;
+                            }
+                            .section-table thead { display: table-header-group; }
+                            .section-table tfoot { display: table-footer-group; }
+                            .section-table tfoot tr td {
+                            height: 2px;
+                            background-color: #2A3382;
+                            padding: 0;
+                            line-height: 2px;
+                            font-size: 1px;
                             }
                             .section-title {
                             background-color: #2A3382;
@@ -72,27 +122,33 @@
                             font-weight: bold;
                             text-transform: uppercase;
                             page-break-after: avoid;
+                            text-align: left !important;
+                            float: left !important;
+                            width: 100% !important;
                             }
                             .section-content {
                             padding: 10px 15px;
                             border: 2px solid #2A3382;
                             border-top: none;
-                            page-break-inside: avoid;
+                            text-align: left !important;
                             }
                             .data-row {
                             display: table;
                             width: 100%;
                             margin-bottom: 8px;
+                            text-align: left !important;
                             }
                             .data-label {
                             display: table-cell;
                             font-weight: bold;
                             width: 130px;
                             vertical-align: top;
+                            text-align: left !important;
                             }
                             .data-value {
                             display: table-cell;
                             vertical-align: top;
+                            text-align: left !important;
                             }
                             .footer-signatures {
                             margin-top: 50px;
@@ -101,7 +157,7 @@
                             .signature-box {
                             width: 45%;
                             display: inline-block;
-                            text-align: center;
+                            text-align: center !important;
                             vertical-align: top;
                             }
                             .signature-line {
@@ -109,10 +165,11 @@
                             margin-top: 60px;
                             padding-top: 5px;
                             font-weight: bold;
+                            text-align: center !important;
                             }
                             .report-date {
                             margin-top: 30px;
-                            text-align: right;
+                            text-align: right !important;
                             font-style: italic;
                             }
                             .equal-height-row {
@@ -244,56 +301,127 @@
                             </tr>
                         </table>
 
-                        <div class="section-wrapper">
-                            <div class="section-title">3. ANTECEDENTES DEL SERVICIO:</div>
-                            <div class="section-content">
-                                <p>
-                                    <span t-field="doc.antecedentes_servicio" />
-                                </p>
-                            </div>
-                        </div>
+                        <!-- Section 3: ANTECEDENTES -->
+                        <table class="section-table"
+                            style="page-break-inside: auto; margin-top: 20px;">
+                            <thead>
+                                <tr>
+                                    <th>3. ANTECEDENTES DEL SERVICIO:</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.get_text_lines(doc.antecedentes_servicio)"
+                                    t-as="line">
+                                    <tr style="page-break-inside: avoid;">
+                                        <td class="text-start" style="text-align: left !important;">
+                                            <span t-esc="line"
+                                                style="text-align: left !important; display: block !important;" />
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td style="height: 2px; background-color: #2A3382; padding: 0;">
+                                        &amp;nbsp;</td>
+                                </tr>
+                            </tfoot>
+                        </table>
 
-                        <div class="section-wrapper">
-                            <div class="section-title">4. HALLAZGOS:</div>
-                            <div class="section-content">
-                                <p>
-                                    <span t-field="doc.hallazgos" />
-                                </p>
-                            </div>
-                        </div>
+                        <!-- Section 4: HALLAZGOS -->
+                        <table class="section-table"
+                            style="page-break-inside: auto; margin-top: 20px;">
+                            <thead>
+                                <tr>
+                                    <th>4. HALLAZGOS:</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.get_text_lines(doc.hallazgos)" t-as="line">
+                                    <tr style="page-break-inside: avoid;">
+                                        <td class="text-start" style="text-align: left !important;">
+                                            <span t-esc="line"
+                                                style="text-align: left !important; display: block !important;" />
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td style="height: 2px; background-color: #2A3382; padding: 0;">
+                                        &amp;nbsp;</td>
+                                </tr>
+                            </tfoot>
+                        </table>
 
-                        <div class="section-wrapper">
-                            <div class="section-title">5. ACCIÓN CORRECTIVA:</div>
-                            <div class="section-content">
-                                <p>
-                                    <span t-field="doc.accion_correctiva" />
-                                </p>
-                            </div>
-                        </div>
+                        <!-- Section 5: ACCIÓN CORRECTIVA -->
+                        <table class="section-table"
+                            style="page-break-inside: auto; margin-top: 20px;">
+                            <thead>
+                                <tr>
+                                    <th>5. ACCIÓN CORRECTIVA:</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.get_text_lines(doc.accion_correctiva)" t-as="line">
+                                    <tr style="page-break-inside: avoid;">
+                                        <td class="text-start" style="text-align: left !important;">
+                                            <span t-esc="line"
+                                                style="text-align: left !important; display: block !important;" />
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td style="height: 2px; background-color: #2A3382; padding: 0;">
+                                        &amp;nbsp;</td>
+                                </tr>
+                            </tfoot>
+                        </table>
 
-                        <div class="section-wrapper">
-                            <div class="section-title">6. RECOMENDACIONES:</div>
-                            <div class="section-content">
-                                <p>
-                                    <span t-field="doc.recomendaciones" />
-                                </p>
-                            </div>
-                        </div>
+                        <!-- Section 6: RECOMENDACIONES -->
+                        <table class="section-table"
+                            style="page-break-inside: auto; margin-top: 20px;">
+                            <thead>
+                                <tr>
+                                    <th>6. RECOMENDACIONES:</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.get_text_lines(doc.recomendaciones)" t-as="line">
+                                    <tr style="page-break-inside: avoid;">
+                                        <td class="text-start" style="text-align: left !important;">
+                                            <span t-esc="line"
+                                                style="text-align: left !important; display: block !important;" />
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td style="height: 2px; background-color: #2A3382; padding: 0;">
+                                        &amp;nbsp;</td>
+                                </tr>
+                            </tfoot>
+                        </table>
 
-                        <div class="section-wrapper"
-                            style="page-break-inside: avoid; margin-top: 20px;">
+                        <div class="section-wrapper" style="margin-top: 20px;">
                             <div class="section-title" style="margin-top: 0;">7. IMÁGENES:</div>
-                            <div class="section-content">
+                            <div class="section-content" style="padding: 15px;">
                                 <t t-foreach="doc.image_ids" t-as="img">
                                     <div
-                                        style="float: left; width: 33%; padding: 5px; text-align: center; box-sizing: border-box; page-break-inside: avoid;">
+                                        style="float: left; width: 50%; padding: 5px; text-align: center; box-sizing: border-box; page-break-inside: avoid;">
                                         <div
-                                            style="border: 2px solid #2A3382; padding: 5px; border-radius: 4px;">
-                                            <img t-if="img.image"
-                                                t-att-src="image_data_uri(img.image)"
-                                                style="max-width: 100%; max-height: 200px; display: block; margin: 0 auto;" />
+                                            style="border: 2px solid #2A3382; padding: 5px; border-radius: 4px; height: 320px; display: flex; flex-direction: column; justify-content: space-between;">
+                                            <div
+                                                style="flex: 1; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                                                <img t-if="img.image"
+                                                    t-att-src="image_data_uri(img.image)"
+                                                    style="max-width: 100%; max-height: 250px; object-fit: contain;" />
+                                            </div>
                                             <div t-if="img.description"
-                                                style="margin-top: 5px; color: #666; font-style: italic;">
+                                                style="margin-top: 8px; color: #333; font-weight: bold; border-top: 1px solid #eee; padding-top: 5px;">
                                                 <span t-field="img.description" />
                                             </div>
                                         </div>

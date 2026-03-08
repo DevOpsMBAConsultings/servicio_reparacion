@@ -168,6 +168,46 @@ class RepairOrder(models.Model):
             action['res_id'] = self.sale_order_ids.id
         return action
 
+    @api.model
+    def get_text_chunks(self, text, max_lines=29):
+        """
+        Splits text into chunks of max_lines.
+        Returns a list of strings.
+        """
+        if not text:
+            return []
+        
+        # Strip leading/trailing noise to avoid empty chunks or ghost alignment
+        text = text.strip()
+        if not text:
+            return []
+            
+        lines = text.splitlines()
+        chunks = []
+        current_chunk = []
+        
+        for line in lines:
+            current_chunk.append(line)
+            if len(current_chunk) >= max_lines:
+                chunks.append('\n'.join(current_chunk))
+                current_chunk = []
+        
+        if current_chunk:
+            chunks.append('\n'.join(current_chunk))
+            
+        return chunks
+
+    @api.model
+    def get_text_lines(self, text):
+        """
+        Splits text into individual lines and strips them aggressively.
+        Handles non-breaking spaces to ensure perfect left alignment in PDFs.
+        """
+        if not text:
+            return []
+        # Filter out truly empty lines to prevent vertical gaps between chunks of text
+        return [line.strip().replace('\xa0', ' ') for line in text.splitlines() if line.strip()]
+
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
