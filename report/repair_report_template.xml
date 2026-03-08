@@ -73,27 +73,6 @@
                             .header-col-left img {
                             max-height: 190px;
                             }
-                            .section-wrapper {
-                            margin-top: 40px;
-                            width: 100%;
-                            }
-                            .section-table {
-                            width: 100%;
-                            border-collapse: collapse;
-                            border-spacing: 0;
-                            border: 2px solid #2A3382;
-                            table-layout: fixed;
-                            text-align: left !important;
-                            }
-                            .section-table thead tr th {
-                            background-color: #2A3382;
-                            color: white;
-                            padding: 10px 15px;
-                            text-align: left !important;
-                            font-weight: bold;
-                            text-transform: uppercase;
-                            border: none;
-                            }
                             .section-table {
                             width: 100%;
                             border-collapse: collapse !important;
@@ -103,32 +82,45 @@
                             }
                             .section-table thead {
                             display: table-header-group;
+                            line-height: 1.0 !important;
                             }
                             .section-table thead th {
                             background-color: #2A3382;
                             color: white;
-                            padding: 10px 15px;
+                            padding: 10px 15px !important;
                             font-weight: bold;
                             text-transform: uppercase;
                             border: none;
                             text-align: left !important;
                             font-size: 14px !important;
+                            line-height: 1.0 !important;
+                            margin: 0 !important;
                             }
                             .section-table tbody td {
                             padding: 10px 15px !important;
                             vertical-align: top;
                             border: none;
                             text-align: left !important;
+                            line-height: 1.0 !important;
+                            margin: 0 !important;
+                            }
+                            .section-table tbody td * {
+                            margin: 0 !important;
+                            padding: 0 !important;
+                            line-height: 1.0 !important;
+                            display: inline; /* Ensure t-field elements don't add blocks */
                             }
                             .section-table tfoot {
                             display: table-footer-group;
+                            line-height: 0 !important;
                             }
                             .section-table tfoot td {
                             height: 0;
                             border-top: 2px solid #2A3382 !important;
                             padding: 0 !important;
-                            line-height: 0;
-                            font-size: 0;
+                            line-height: 0 !important;
+                            font-size: 0 !important;
+                            margin: 0 !important;
                             }
                             .section-title-box {
                             background-color: #2A3382;
@@ -138,6 +130,7 @@
                             text-transform: uppercase;
                             margin: 0;
                             font-size: 14px !important;
+                            line-height: 1.0 !important;
                             }
                             .data-row {
                             display: table;
