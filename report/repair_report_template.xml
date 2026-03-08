@@ -317,7 +317,7 @@
                                     <td class="text-start"
                                         style="text-align: left !important; padding: 0 15px !important;">
                                         <span
-                                            t-esc="(doc.antecedentes_servicio or '').strip().replace('\xa0', ' ')"
+                                            t-esc="(doc.antecedentes_servicio or '').replace('\xa0', ' ')"
                                             style="text-align: left !important; display: block !important; white-space: pre-wrap !important;" />
                                     </td>
                                 </tr>
@@ -339,7 +339,7 @@
                                     <td class="text-start"
                                         style="text-align: left !important; padding: 0 15px !important;">
                                         <span
-                                            t-esc="(doc.hallazgos or '').strip().replace('\xa0', ' ')"
+                                            t-esc="(doc.hallazgos or '').replace('\xa0', ' ')"
                                             style="text-align: left !important; display: block !important; white-space: pre-wrap !important;" />
                                     </td>
                                 </tr>
@@ -361,7 +361,7 @@
                                     <td class="text-start"
                                         style="text-align: left !important; padding: 0 15px !important;">
                                         <span
-                                            t-esc="(doc.accion_correctiva or '').strip().replace('\xa0', ' ')"
+                                            t-esc="(doc.accion_correctiva or '').replace('\xa0', ' ')"
                                             style="text-align: left !important; display: block !important; white-space: pre-wrap !important;" />
                                     </td>
                                 </tr>
@@ -383,7 +383,7 @@
                                     <td class="text-start"
                                         style="text-align: left !important; padding: 0 15px !important;">
                                         <span
-                                            t-esc="(doc.recomendaciones or '').strip().replace('\xa0', ' ')"
+                                            t-esc="(doc.recomendaciones or '').replace('\xa0', ' ')"
                                             style="text-align: left !important; display: block !important; white-space: pre-wrap !important;" />
                                     </td>
                                 </tr>
