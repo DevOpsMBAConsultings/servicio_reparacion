@@ -315,7 +315,7 @@
                                     <td class="text-start"
                                         style="text-align: left !important; padding: 0 15px !important;">
                                         <span
-                                            t-esc="doc.clean_report_text(doc.antecedentes_servicio)"
+                                            t-esc="(doc.antecedentes_servicio or '').strip().replace('\xa0', ' ')"
                                             style="text-align: left !important; display: block !important; white-space: pre-wrap !important;" />
                                     </td>
                                 </tr>
@@ -340,7 +340,8 @@
                                 <tr style="page-break-inside: auto;">
                                     <td class="text-start"
                                         style="text-align: left !important; padding: 0 15px !important;">
-                                        <span t-esc="doc.clean_report_text(doc.hallazgos)"
+                                        <span
+                                            t-esc="(doc.hallazgos or '').strip().replace('\xa0', ' ')"
                                             style="text-align: left !important; display: block !important; white-space: pre-wrap !important;" />
                                     </td>
                                 </tr>
@@ -365,7 +366,8 @@
                                 <tr style="page-break-inside: auto;">
                                     <td class="text-start"
                                         style="text-align: left !important; padding: 0 15px !important;">
-                                        <span t-esc="doc.clean_report_text(doc.accion_correctiva)"
+                                        <span
+                                            t-esc="(doc.accion_correctiva or '').strip().replace('\xa0', ' ')"
                                             style="text-align: left !important; display: block !important; white-space: pre-wrap !important;" />
                                     </td>
                                 </tr>
@@ -390,7 +392,8 @@
                                 <tr style="page-break-inside: auto;">
                                     <td class="text-start"
                                         style="text-align: left !important; padding: 0 15px !important;">
-                                        <span t-esc="doc.clean_report_text(doc.recomendaciones)"
+                                        <span
+                                            t-esc="(doc.recomendaciones or '').strip().replace('\xa0', ' ')"
                                             style="text-align: left !important; display: block !important; white-space: pre-wrap !important;" />
                                     </td>
                                 </tr>

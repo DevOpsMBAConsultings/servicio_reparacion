@@ -198,17 +198,6 @@ class RepairOrder(models.Model):
         return chunks
 
     @api.model
-    def clean_report_text(self, text):
-        """
-        Cleans text for report display: removes non-breaking spaces
-        and strips outer whitespace, but preserves internal line breaks
-        so the user can control their own spacing.
-        """
-        if not text:
-            return ""
-        return text.strip().replace('\xa0', ' ')
-
-    @api.model
     def get_text_lines(self, text):
         """
         Splits text into individual lines and strips them aggressively.
