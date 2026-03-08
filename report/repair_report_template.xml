@@ -98,10 +98,10 @@
                             text-align: left !important;
                             }
                             .section-table tbody tr td {
-                            padding: 1px 15px !important;
+                            padding: 0px 15px !important;
                             vertical-align: top;
                             border: none;
-                            line-height: 1.2;
+                            line-height: 1.0;
                             white-space: pre-wrap !important;
                             }
                             .section-table thead { display: table-header-group; }
@@ -313,9 +313,9 @@
                                 <t t-foreach="doc.get_text_lines(doc.antecedentes_servicio)"
                                     t-as="line">
                                     <tr style="page-break-inside: avoid;">
-                                        <td class="text-start" style="text-align: left !important;">
-                                            <span t-esc="line"
-                                                style="text-align: left !important; display: block !important;" />
+                                        <td class="text-start"
+                                            style="text-align: left !important; padding: 0 15px !important;">
+                                            <span t-esc="line" style="text-align: left !important;" />
                                         </td>
                                     </tr>
                                 </t>
@@ -339,9 +339,9 @@
                             <tbody>
                                 <t t-foreach="doc.get_text_lines(doc.hallazgos)" t-as="line">
                                     <tr style="page-break-inside: avoid;">
-                                        <td class="text-start" style="text-align: left !important;">
-                                            <span t-esc="line"
-                                                style="text-align: left !important; display: block !important;" />
+                                        <td class="text-start"
+                                            style="text-align: left !important; padding: 0 15px !important;">
+                                            <span t-esc="line" style="text-align: left !important;" />
                                         </td>
                                     </tr>
                                 </t>
@@ -365,9 +365,9 @@
                             <tbody>
                                 <t t-foreach="doc.get_text_lines(doc.accion_correctiva)" t-as="line">
                                     <tr style="page-break-inside: avoid;">
-                                        <td class="text-start" style="text-align: left !important;">
-                                            <span t-esc="line"
-                                                style="text-align: left !important; display: block !important;" />
+                                        <td class="text-start"
+                                            style="text-align: left !important; padding: 0 15px !important;">
+                                            <span t-esc="line" style="text-align: left !important;" />
                                         </td>
                                     </tr>
                                 </t>
@@ -391,9 +391,9 @@
                             <tbody>
                                 <t t-foreach="doc.get_text_lines(doc.recomendaciones)" t-as="line">
                                     <tr style="page-break-inside: avoid;">
-                                        <td class="text-start" style="text-align: left !important;">
-                                            <span t-esc="line"
-                                                style="text-align: left !important; display: block !important;" />
+                                        <td class="text-start"
+                                            style="text-align: left !important; padding: 0 15px !important;">
+                                            <span t-esc="line" style="text-align: left !important;" />
                                         </td>
                                     </tr>
                                 </t>
