@@ -114,24 +114,32 @@
                             line-height: 0;
                             font-size: 0;
                             }
+                            .section-wrapper {
+                            margin-top: 40px;
+                            width: 100%;
+                            page-break-inside: auto; /* Permite que la sección se rompa naturalmente
+                            */
+                            }
                             .section-title {
                             background-color: #2A3382;
                             color: white;
                             padding: 10px 15px;
-                            margin-top: 40px;
+                            margin-top: 0; /* Consolidado en el wrapper */
                             margin-bottom: 0;
                             font-weight: bold;
                             text-transform: uppercase;
-                            page-break-after: avoid;
-                            text-align: left !important;
-                            float: left !important;
-                            width: 100% !important;
+                            page-break-after: avoid; /* El título NO debe quedarse solo al final de
+                            la página */
+                            width: 100%;
+                            display: block;
                             }
                             .section-content {
                             padding: 10px 15px;
                             border: 2px solid #2A3382;
                             border-top: none;
                             text-align: left !important;
+                            page-break-inside: auto; /* El contenido se puede partir entre páginas
+                            */
                             }
                             .data-row {
                             display: table;
