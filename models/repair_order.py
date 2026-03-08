@@ -200,15 +200,13 @@ class RepairOrder(models.Model):
     @api.model
     def clean_report_text(self, text):
         """
-        Aggressively cleans text for report display: removes non-breaking spaces,
-        filters out all empty lines, and joins them with a single newline to 
-        eliminate vertical gaps in the PDF.
+        Cleans text for report display: removes non-breaking spaces
+        and strips outer whitespace, but preserves internal line breaks
+        so the user can control their own spacing.
         """
         if not text:
             return ""
-        # Split, clean, filter empty, and join back
-        lines = [line.strip().replace('\xa0', ' ') for line in text.splitlines() if line.strip()]
-        return '\n'.join(lines)
+        return text.strip().replace('\xa0', ' ')
 
     @api.model
     def get_text_lines(self, text):
