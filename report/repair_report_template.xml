@@ -303,6 +303,7 @@
                         </table>
 
                         <!-- Section 3: ANTECEDENTES -->
+                        <div style="height: 20px; width: 100%; clear: both;" />
                         <table class="section-table"
                             style="page-break-inside: auto; margin-top: 40px;">
                             <thead>
@@ -398,7 +399,7 @@
                                                 style="flex: 1; display: flex; align-items: center; justify-content: center; overflow: hidden;">
                                                 <img t-if="img.image"
                                                     t-att-src="image_data_uri(img.image)"
-                                                    style="max-width: 100%; max-height: 250px; object-fit: contain;" />
+                                                    style="max-width: 100%; max-height: 250px; object-fit: contain; margin: 0 auto; display: block;" />
                                             </div>
                                             <div t-if="img.description"
                                                 style="margin-top: 8px; color: #333; font-weight: bold; border-top: 1px solid #eee; padding-top: 5px;">
