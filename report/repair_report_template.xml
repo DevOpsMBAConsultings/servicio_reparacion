@@ -329,6 +329,7 @@
                         </table>
 
                         <!-- Section 4: HALLAZGOS -->
+                        <div style="height: 20px; width: 100%; clear: both;" />
                         <table class="section-table"
                             style="page-break-inside: auto; margin-top: 40px;">
                             <thead>
@@ -355,6 +356,7 @@
                         </table>
 
                         <!-- Section 5: ACCIÓN CORRECTIVA -->
+                        <div style="height: 20px; width: 100%; clear: both;" />
                         <table class="section-table"
                             style="page-break-inside: auto; margin-top: 40px;">
                             <thead>
@@ -381,6 +383,7 @@
                         </table>
 
                         <!-- Section 6: RECOMENDACIONES -->
+                        <div style="height: 20px; width: 100%; clear: both;" />
                         <table class="section-table"
                             style="page-break-inside: auto; margin-top: 40px;">
                             <thead>
@@ -406,6 +409,7 @@
                             </tfoot>
                         </table>
 
+                        <div style="height: 20px; width: 100%; clear: both;" />
                         <div class="section-wrapper" style="margin-top: 40px;">
                             <div class="section-title" style="margin-top: 0;">7. IMÁGENES:</div>
                             <div class="section-content" style="padding: 15px;">
