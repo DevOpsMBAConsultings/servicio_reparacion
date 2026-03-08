@@ -101,6 +101,7 @@
                             padding: 0px 15px !important;
                             vertical-align: top;
                             border: none;
+                            text-align: left !important;
                             line-height: 1.0;
                             white-space: pre-wrap !important;
                             }
@@ -315,7 +316,8 @@
                                     <tr style="page-break-inside: avoid;">
                                         <td class="text-start"
                                             style="text-align: left !important; padding: 0 15px !important;">
-                                            <span t-esc="line" style="text-align: left !important;" />
+                                            <span t-esc="line"
+                                                style="text-align: left !important; display: block !important;" />
                                         </td>
                                     </tr>
                                 </t>
@@ -341,7 +343,8 @@
                                     <tr style="page-break-inside: avoid;">
                                         <td class="text-start"
                                             style="text-align: left !important; padding: 0 15px !important;">
-                                            <span t-esc="line" style="text-align: left !important;" />
+                                            <span t-esc="line"
+                                                style="text-align: left !important; display: block !important;" />
                                         </td>
                                     </tr>
                                 </t>
@@ -367,7 +370,8 @@
                                     <tr style="page-break-inside: avoid;">
                                         <td class="text-start"
                                             style="text-align: left !important; padding: 0 15px !important;">
-                                            <span t-esc="line" style="text-align: left !important;" />
+                                            <span t-esc="line"
+                                                style="text-align: left !important; display: block !important;" />
                                         </td>
                                     </tr>
                                 </t>
@@ -393,7 +397,8 @@
                                     <tr style="page-break-inside: avoid;">
                                         <td class="text-start"
                                             style="text-align: left !important; padding: 0 15px !important;">
-                                            <span t-esc="line" style="text-align: left !important;" />
+                                            <span t-esc="line"
+                                                style="text-align: left !important; display: block !important;" />
                                         </td>
                                     </tr>
                                 </t>
