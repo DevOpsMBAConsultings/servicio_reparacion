@@ -94,15 +94,15 @@
                             text-transform: uppercase;
                             border: none;
                             }
-                            .section-table tbody tr td, .section-table * {
-                            text-align: left !important;
+                            .section-table, .section-table * {
+                            margin: 0 !important;
+                            line-height: 1.0 !important;
                             }
                             .section-table tbody tr td {
                             padding: 0px 15px !important;
                             vertical-align: top;
                             border: none;
                             text-align: left !important;
-                            line-height: 1.0;
                             white-space: pre-wrap !important;
                             }
                             .section-table thead { display: table-header-group; }
