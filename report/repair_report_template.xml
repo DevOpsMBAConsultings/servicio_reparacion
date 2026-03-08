@@ -124,22 +124,24 @@
                             background-color: #2A3382;
                             color: white;
                             padding: 10px 15px;
-                            margin-top: 0; /* Consolidado en el wrapper */
+                            margin-top: 0;
                             margin-bottom: 0;
                             font-weight: bold;
                             text-transform: uppercase;
-                            page-break-after: avoid; /* El título NO debe quedarse solo al final de
-                            la página */
+                            page-break-after: avoid;
                             width: 100%;
                             display: block;
+                            border: 2px solid #2A3382;
+                            border-bottom: none;
                             }
                             .section-content {
                             padding: 10px 15px;
                             border: 2px solid #2A3382;
-                            border-top: none;
                             text-align: left !important;
-                            page-break-inside: auto; /* El contenido se puede partir entre páginas
-                            */
+                            page-break-inside: auto;
+                            margin-top: -2px; /* Overlap with title border */
+                            -webkit-box-decoration-break: clone;
+                            box-decoration-break: clone;
                             }
                             .data-row {
                             display: table;
