@@ -305,14 +305,14 @@
                         <!-- Section 3: ANTECEDENTES -->
                         <div style="height: 20px; width: 100%; clear: both;" />
                         <table class="section-table"
-                            style="page-break-inside: auto; margin-top: 40px;">
+                            style="page-break-inside: avoid; margin-top: 40px;">
                             <thead>
                                 <tr>
                                     <th>3. ANTECEDENTES DEL SERVICIO:</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr style="page-break-inside: auto;">
+                                <tr style="page-break-inside: avoid;">
                                     <td class="text-start"
                                         style="text-align: left !important; padding: 0 15px !important;">
                                         <span
@@ -326,14 +326,14 @@
                         <!-- Section 4: HALLAZGOS -->
                         <div style="height: 20px; width: 100%; clear: both;" />
                         <table class="section-table"
-                            style="page-break-inside: auto; margin-top: 40px;">
+                            style="page-break-inside: avoid; margin-top: 40px;">
                             <thead>
                                 <tr>
                                     <th>4. HALLAZGOS:</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr style="page-break-inside: auto;">
+                                <tr style="page-break-inside: avoid;">
                                     <td class="text-start"
                                         style="text-align: left !important; padding: 0 15px !important;">
                                         <span
@@ -347,14 +347,14 @@
                         <!-- Section 5: ACCIÓN CORRECTIVA -->
                         <div style="height: 20px; width: 100%; clear: both;" />
                         <table class="section-table"
-                            style="page-break-inside: auto; margin-top: 40px;">
+                            style="page-break-inside: avoid; margin-top: 40px;">
                             <thead>
                                 <tr>
                                     <th>5. ACCIÓN CORRECTIVA:</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr style="page-break-inside: auto;">
+                                <tr style="page-break-inside: avoid;">
                                     <td class="text-start"
                                         style="text-align: left !important; padding: 0 15px !important;">
                                         <span
@@ -368,14 +368,14 @@
                         <!-- Section 6: RECOMENDACIONES -->
                         <div style="height: 20px; width: 100%; clear: both;" />
                         <table class="section-table"
-                            style="page-break-inside: auto; margin-top: 40px;">
+                            style="page-break-inside: avoid; margin-top: 40px;">
                             <thead>
                                 <tr>
                                     <th>6. RECOMENDACIONES:</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr style="page-break-inside: auto;">
+                                <tr style="page-break-inside: avoid;">
                                     <td class="text-start"
                                         style="text-align: left !important; padding: 0 15px !important;">
                                         <span
