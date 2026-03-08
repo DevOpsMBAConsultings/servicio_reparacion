@@ -311,16 +311,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <t t-foreach="doc.get_text_lines(doc.antecedentes_servicio)"
-                                    t-as="line">
-                                    <tr style="page-break-inside: avoid;">
-                                        <td class="text-start"
-                                            style="text-align: left !important; padding: 0 15px !important;">
-                                            <span t-esc="line"
-                                                style="text-align: left !important; display: block !important;" />
-                                        </td>
-                                    </tr>
-                                </t>
+                                <tr style="page-break-inside: auto;">
+                                    <td class="text-start"
+                                        style="text-align: left !important; padding: 0 15px !important;">
+                                        <span
+                                            t-esc="doc.clean_report_text(doc.antecedentes_servicio)"
+                                            style="text-align: left !important; display: block !important; white-space: pre-wrap !important;" />
+                                    </td>
+                                </tr>
                             </tbody>
                             <tfoot>
                                 <tr>
@@ -339,15 +337,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <t t-foreach="doc.get_text_lines(doc.hallazgos)" t-as="line">
-                                    <tr style="page-break-inside: avoid;">
-                                        <td class="text-start"
-                                            style="text-align: left !important; padding: 0 15px !important;">
-                                            <span t-esc="line"
-                                                style="text-align: left !important; display: block !important;" />
-                                        </td>
-                                    </tr>
-                                </t>
+                                <tr style="page-break-inside: auto;">
+                                    <td class="text-start"
+                                        style="text-align: left !important; padding: 0 15px !important;">
+                                        <span t-esc="doc.clean_report_text(doc.hallazgos)"
+                                            style="text-align: left !important; display: block !important; white-space: pre-wrap !important;" />
+                                    </td>
+                                </tr>
                             </tbody>
                             <tfoot>
                                 <tr>
@@ -366,15 +362,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <t t-foreach="doc.get_text_lines(doc.accion_correctiva)" t-as="line">
-                                    <tr style="page-break-inside: avoid;">
-                                        <td class="text-start"
-                                            style="text-align: left !important; padding: 0 15px !important;">
-                                            <span t-esc="line"
-                                                style="text-align: left !important; display: block !important;" />
-                                        </td>
-                                    </tr>
-                                </t>
+                                <tr style="page-break-inside: auto;">
+                                    <td class="text-start"
+                                        style="text-align: left !important; padding: 0 15px !important;">
+                                        <span t-esc="doc.clean_report_text(doc.accion_correctiva)"
+                                            style="text-align: left !important; display: block !important; white-space: pre-wrap !important;" />
+                                    </td>
+                                </tr>
                             </tbody>
                             <tfoot>
                                 <tr>
@@ -393,15 +387,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <t t-foreach="doc.get_text_lines(doc.recomendaciones)" t-as="line">
-                                    <tr style="page-break-inside: avoid;">
-                                        <td class="text-start"
-                                            style="text-align: left !important; padding: 0 15px !important;">
-                                            <span t-esc="line"
-                                                style="text-align: left !important; display: block !important;" />
-                                        </td>
-                                    </tr>
-                                </t>
+                                <tr style="page-break-inside: auto;">
+                                    <td class="text-start"
+                                        style="text-align: left !important; padding: 0 15px !important;">
+                                        <span t-esc="doc.clean_report_text(doc.recomendaciones)"
+                                            style="text-align: left !important; display: block !important; white-space: pre-wrap !important;" />
+                                    </td>
+                                </tr>
                             </tbody>
                             <tfoot>
                                 <tr>
