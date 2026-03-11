@@ -294,7 +294,7 @@
                                         <div class="data-row">
                                             <div class="data-label" style="width: 120px;">HORAS:</div>
                                             <div class="data-value">
-                                                <span t-field="doc.vehicle_horas" />
+                                                <span t-field="doc.engine_hours" />
                                             </div>
                                         </div>
                                         <div class="data-row">

@@ -23,7 +23,7 @@ class RepairOrder(models.Model):
 
     # Added manually by user (vehicle usage) 
     odometer = fields.Float(string='KM (Odómetro)', related='vehicle_id.odometer', readonly=False)
-    vehicle_horas = fields.Char(string='Horas', related='vehicle_id.vehicle_horas', readonly=False)
+    engine_hours = fields.Float(string='Horas de Motor', related='vehicle_id.engine_hours', readonly=False)
     location = fields.Char(string='Ubicación', related='vehicle_id.location', readonly=False)
 
     # Images (max 15)

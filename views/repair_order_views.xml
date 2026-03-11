@@ -53,7 +53,7 @@
                 <field name="vehicle_vin" />
                 <field name="vehicle_plate" />
                 <field name="odometer" />
-                <field name="vehicle_horas" />
+                <field name="engine_hours" />
                 <field name="location" />
             </xpath>
 
