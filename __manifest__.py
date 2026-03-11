@@ -21,8 +21,8 @@
     ],
     'data': [
         'security/ir.model.access.csv',
-        'views/fleet_vehicle_views.xml',
         'views/fleet_vehicle_engine_hour_views.xml',
+        'views/fleet_vehicle_views.xml',
         'views/repair_order_views.xml',
         'views/res_partner_views.xml',
         'views/sale_order_views.xml',
