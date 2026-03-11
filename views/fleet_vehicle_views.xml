@@ -5,11 +5,20 @@
         <field name="model">fleet.vehicle</field>
         <field name="inherit_id" ref="fleet.fleet_vehicle_view_form" />
         <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="%(fleet_vehicle_engine_hour_action)d" type="action" class="oe_stat_button" icon="fa-clock-o" groups="fleet.fleet_group_user" help="Historial de Horas de Motor">
+                    <field name="engine_hours" widget="statinfo" string="Horas Motor"/>
+                </button>
+            </xpath>
             <xpath expr="//field[@name='driver_id']" position="before">
                 <field name="customer_id" placeholder="Asignar al Dueño/Cliente de la Flota" />
             </xpath>
             <xpath expr="//field[@name='location']" position="after">
-                <field name="vehicle_horas" />
+                <label for="engine_hours"/>
+                <div class="o_row">
+                    <field name="engine_hours"/>
+                    <span>horas</span>
+                </div>
             </xpath>
         </field>
     </record>

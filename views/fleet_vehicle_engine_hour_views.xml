@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="fleet_vehicle_engine_hour_view_tree" model="ir.ui.view">
+        <field name="name">fleet.vehicle.engine_hour.view.tree</field>
+        <field name="model">fleet.vehicle.engine_hour</field>
+        <field name="arch" type="xml">
+            <tree string="Historial de Horas de Motor" editable="top">
+                <field name="date"/>
+                <field name="vehicle_id" column_invisible="True"/>
+                <field name="value"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="fleet_vehicle_engine_hour_view_form" model="ir.ui.view">
+        <field name="name">fleet.vehicle.engine_hour.view.form</field>
+        <field name="model">fleet.vehicle.engine_hour</field>
+        <field name="arch" type="xml">
+            <form string="Registro de Horas de Motor">
+                <sheet>
+                    <group>
+                        <field name="vehicle_id"/>
+                        <field name="value"/>
+                        <field name="date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="fleet_vehicle_engine_hour_action" model="ir.actions.act_window">
+        <field name="name">Horas de Motor</field>
+        <field name="res_model">fleet.vehicle.engine_hour</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_vehicle_id': active_id, 'default_vehicle_id': active_id}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Crea un nuevo registro de horas de motor
+            </p>
+        </field>
+    </record>
+</odoo>
