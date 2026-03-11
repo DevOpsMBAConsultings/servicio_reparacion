@@ -73,6 +73,18 @@
             action="repair.action_repair_order_tree"
             sequence="40" />
 
+        <!-- Análisis Menu -->
+        <menuitem id="menu_servicio_reparacion_analysis"
+            name="Análisis"
+            parent="menu_servicio_reparacion_root"
+            sequence="45" />
+
+        <menuitem id="menu_servicio_reparacion_engine_hours"
+            name="Horas de Motor"
+            parent="menu_servicio_reparacion_analysis"
+            action="fleet_vehicle_engine_hour_action"
+            sequence="10" />
+
         <!-- Configuración Menu -->
         <menuitem id="menu_servicio_reparacion_config"
             name="Configuración"
