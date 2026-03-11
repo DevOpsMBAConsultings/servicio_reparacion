@@ -18,6 +18,7 @@
                 <div class="o_row">
                     <field name="engine_hours"/>
                     <span>horas</span>
+                    <button name="%(fleet_vehicle_engine_hour_action)d" type="action" class="oe_link ps-0" icon="fa-area-chart" groups="fleet.fleet_group_user" invisible="not id"/>
                 </div>
             </xpath>
         </field>
