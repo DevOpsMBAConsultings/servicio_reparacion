@@ -30,16 +30,15 @@
         <field name="inherit_id" ref="fleet.fleet_vehicle_view_kanban" />
         <field name="arch" type="xml">
             <xpath expr="//kanban" position="inside">
-                <field name="license_plate"/>
                 <field name="customer_id"/>
             </xpath>
-            <xpath expr="//div[hasclass('oe_kanban_details')]//ul" position="inside">
-                <li t-if="record.license_plate.raw_value">
+            <xpath expr="//main" position="inside">
+                <div t-if="record.license_plate.raw_value">
                     <strong>Placa:</strong> <field name="license_plate"/>
-                </li>
-                <li t-if="record.customer_id.raw_value">
+                </div>
+                <div t-if="record.customer_id.raw_value">
                     <strong>Cliente:</strong> <field name="customer_id"/>
-                </li>
+                </div>
             </xpath>
         </field>
     </record>
