@@ -32,7 +32,10 @@
             <xpath expr="//kanban" position="inside">
                 <field name="customer_id"/>
             </xpath>
-            <xpath expr="//main" position="inside">
+            <xpath expr="//main/div[1]" position="replace">
+                <div class="fw-bolder fs-5">
+                    <field name="model_id"/>
+                </div>
                 <div t-if="record.license_plate.raw_value">
                     <strong>Placa:</strong> <field name="license_plate"/>
                 </div>
